@@ -1,0 +1,7 @@
+make -C home/python clean
+make -C home/dwarf clean
+
+find . -name '*.pyc' -delete
+find . -name __pycache__ -delete
+find . -name '*.log' -delete
+

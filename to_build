@@ -1,0 +1,11 @@
+PRESENT_DIR="/home/kevin/Documents/redactions/presentation-17-01 Seminaire Corse/"
+
+cp "$PRESENT_DIR/presentation.pdf" ./home
+cp "$PRESENT_DIR/exercices.md" ./home
+
+cp -r ./home tuto-gdb-py
+tar cfz tuto-gdb-py.tgz ./tuto-gdb-py
+rm -rf ./tuto-gdb-py
+
+docker build -t kpouget/tuto-gdb.py .
+

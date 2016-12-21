@@ -1,0 +1,27 @@
+### Tutorial slides
+
+    $HOME/presentation.pdf
+
+### Exercise sheet
+
+    $HOME/exercices.md
+
+### Dwarf stuff and discovery exerises
+
+    cd [host/]dwarf
+    make
+    vi prodconsum.dwarf
+
+### Python stuff
+
+    cd [host/]python
+    GDB Python documentation: ./doc/index.html (Python-API.html) 
+    https://sourceware.org/gdb/current/onlinedocs/gdb/Python-API.html
+
+    make section # builds the binary
+    make help    # shows the available examples:
+    > run_fake run_return run_section run_step run_watch
+    # then
+    make run_section DEMO=y # runs the demo version of the python commands (demo/*)
+    make run_section [DEMO=n] # runs your version of the commands
+

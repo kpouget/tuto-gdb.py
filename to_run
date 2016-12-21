@@ -1,0 +1,2 @@
+HOST_DIR=/home/kevin/jdd_debug_data/
+docker run -it -v $HOST_DIR:/home/jcf/host -e GROUPID=$(id -g) -e USERID=$(id -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
