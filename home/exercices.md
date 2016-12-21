@@ -6,8 +6,8 @@ Preliminary setup
 
 Prepare and launch the docker container:
 
-    HOST_DIR=/home/kevin/jdd_debug_data/ # absolute path required
-    docker run -it -v $HOST_DIR:/home/jcf/host -e GROUPID=$(id -g) -e USERID=$(id -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
+    HOST_DIR=/home/kevin/gdb.py_debug_data/ # absolute path required
+    docker run -it -v $HOST_DIR:/home/gdb.py/host -e GROUPID=$(id -g) -e USERID=$(id -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
 
 Then if you want to share the data with your host, work from `~/host`, otherwise stay in `~`:
 
@@ -213,8 +213,7 @@ Try to run different processes with this debugger script and see how it behaves.
     STOP: program stopped because of a SignalEvent
     ...
     
-Now you're know the basics of GDB scripting ! Get back to the slides *Part 2*, to try to build new commands with real utilities!
-The program is:
+Now you're know the basics of GDB scripting ! Get back to the slides *Part 2*, to try to build new commands with real utilities! The program is:
 
 1. Section breakpoint
 2. Return true breakpoint
