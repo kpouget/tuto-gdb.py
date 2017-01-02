@@ -20,8 +20,8 @@ then
   echo "       Please run docker as follows:"
   cat <<EOF
 
-HOST_DIR=$HOME/jcf_debug_data # create it first !
-docker run -it -v \$HOST_DIR:/home/jcf/host -e GROUPID=\$(uid -g) -e USERID=\$(uid -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
+HOST_DIR=$HOME/gdb.py_data # create it first !
+docker run -it -v \$HOST_DIR:/home/gdb.py/host -e GROUPID=\$(uid -g) -e USERID=\$(uid -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
 EOF
    exec bash
 fi
