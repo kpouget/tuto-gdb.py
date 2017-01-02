@@ -6,7 +6,7 @@ Preliminary setup
 
 Prepare and launch the docker container:
 
-    HOST_DIR=/home/kevin/gdb.py_debug_data/ # absolute path required
+    HOST_DIR=/home/kevin/gdb.py_debug_data/ # absolute path required ; create it manually before
     docker run -it -v $HOST_DIR:/home/gdb.py/host -e GROUPID=$(id -g) -e USERID=$(id -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
 
 Then if you want to share the data with your host, work from `~/host`, otherwise stay in `~`:
