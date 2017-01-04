@@ -20,8 +20,8 @@ then
   echo "       Please run docker as follows:"
   cat <<EOF
 
-HOST_DIR=$HOME/gdb.py_data # create it first !
-docker run -it -v \$HOST_DIR:/home/gdb.py/host -e GROUPID=\$(uid -g) -e USERID=\$(uid -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
+HOST_DIR=\$HOME/gdb_data # create it first !
+docker run -it -v \$HOST_DIR:/home/gdb/host -e GROUPID=\$(id -g) -e USERID=\$(id -u) --cap-add sys_ptrace kpouget/tuto-gdb.py
 EOF
    exec bash
 fi
@@ -29,10 +29,10 @@ fi
 ##### admin stuff #####
 
 echo "root:root" | chpasswd && echo "INFO: root password set to 'root'."
-groupadd --gid $GROUPID jcf --non-unique
-useradd --uid $USERID --gid $GROUPID jcf
-chown jcf:jcf /home/jcf/ -R
-echo "INFO: Docker image version $(cat /home/jcf/.version)"
+groupadd --gid $GROUPID gdb --non-unique
+useradd --uid $USERID --gid $GROUPID gdb
+chown gdb:gdb /home/gdb/ -R
+echo "INFO: Docker image version $(cat /home/gdb/.version)"
 ##### check strace #####
 
 strace ls &>/dev/null
@@ -43,13 +43,13 @@ fi
 
 ##### prepare host #####
 
-HOST_MNT=/home/jcf/host
+HOST_MNT=/home/gdb/host
 if [ -z "$(ls -A $HOST_MNT/dwarf $HOST_MNT/python 2>/dev/null)" ] 
 then
     echo "INFO: Running './prepare_host.sh' to populate $HOST_MNT host-shared directory."
-    su jcf -c ./prepare_host.sh
+    su gdb -c ./prepare_host.sh
 fi
 
 echo "INFO: Read ~/README or ~/presentation.pdf for usage details"
 
-exec su jcf
+exec su gdb

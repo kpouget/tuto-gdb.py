@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-HOST_MNT=/home/jcf/host
+HOST_MNT=/home/gdb/host
 
 mkdir -p $HOST_MNT
 

@@ -10,11 +10,11 @@ RUN pacman --noconfirm --needed -Sy gdb strace libdwarf make binutils gcc vim \
     && mkdir -p /var/cache/pacman/pkg/
 
 
-RUN mkdir -p /home/gdb.py
-WORKDIR /home/gdb.py
+RUN mkdir -p /home/gdb
+WORKDIR /home/gdb
 
-COPY home /home/gdb.py
-COPY Dockerfile /home/gdb.py
+COPY home /home/gdb
+COPY Dockerfile /home/gdb
 
-RUN date > /home/gdb.py/.version
-VOLUME /home/gdb.py
+RUN date > /home/gdb/.version
+VOLUME /home/gdb
