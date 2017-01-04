@@ -53,7 +53,7 @@ int main(){
         pthread_t prod;
         pthread_t cons;
 
-        puts("createing first thread");
+        puts("Creating first thread");
         if(pthread_create(&prod, NULL, producer, (void*)&context) != 0){
                 puts("Could not create producer thread");
 
@@ -63,7 +63,7 @@ int main(){
                 return(EXIT_FAILURE);
         }
 
-        puts("createing second thread");
+        puts("Creating second thread");
         if(pthread_create(&cons, NULL, consumer, (void*)&context) != 0){
                 puts("Could not create consumer thread");
 

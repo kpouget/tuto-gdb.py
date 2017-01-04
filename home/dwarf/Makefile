@@ -1,9 +1,22 @@
 CFLAGS := -g
 
-all : prodconsum.dwarf
+HAS_DWARFDUMP := $(shell command -v dwarfdump 2> /dev/null)
+
+TARGET := prodconsum
+
+ifdef HAS_DWARFDUMP
+    TARGET := ${TARGET} prodconsum.dwarf
+endif
+
+ifndef HAS_DWARFDUMP
+    $(warning "dwarfdump not available, cannot generate prodconsum.dwarf")
+endif
+
+
+all : ${TARGET}
 	@echo
 	@echo "###"
-	@echo "### $< is ready."
+	@echo "### $^ ready."
 	@echo "###"
 	@echo
 
