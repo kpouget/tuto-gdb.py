@@ -46,8 +46,13 @@ echo "root:root" | chpasswd
 
 groupadd --gid $GROUPID $USER_NAME --non-unique
 useradd --uid $USERID --gid $GROUPID $USER_NAME
-
+echo $USER_NAME:$USER_NAME | chpasswd
 chown $USER_NAME:$USER_NAME /home/$USER_NAME/ -R
+
+echo "==++++++++++++++++++++++++++="
+echo "== Root password is 'root'"
+echo "== User ($USER_NAME) is '$USER_NAME'" 
+echo "==++++++++++++++++++++++++++="
 
 ##### check strace #####
 

@@ -5,7 +5,7 @@ MAINTAINER Kevin Pouget <kpouget@imag.fr>
 ENTRYPOINT ["bash"]
 CMD ["init.sh"]
 
-RUN pacman --noconfirm --needed -Sy gdb strace libdwarf make binutils gcc vim sudo \
+RUN pacman --noconfirm --needed -Sy gdb strace libdwarf make binutils gcc vim sudo wget python-pip \
     && rm -rf /var/cache/pacman/pkg/ \
     && mkdir -p /var/cache/pacman/pkg/
 
